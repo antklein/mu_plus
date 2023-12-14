@@ -142,17 +142,24 @@ AdvancedLoggerGetLoggerInfo (
   return mLoggerInfo;
 }
 
-/*
+/**
   Helper function to populate prefixes for each advanced logger message to distinguish
   between different modules types.
 
+  @param[out]  MessagePrefixSize  Length of the prefix string in bytes, excluding null terminator.
+
   @return   Pointer to the prefix string. A NULL pointer indicates that no prefix is needed.
-*/
+**/
 CONST CHAR8*
 EFIAPI
 AdvancedLoggerGetStringPrefix (
-  VOID
+  OUT UINTN *MessagePrefixSize
   )
 {
+  if (MessagePrefixSize == NULL) {
+    return NULL;
+  }
+
+  *MessagePrefixSize = FixedPcdGetSize (PcdAdvancedLoggerStringMmCoreArmPrefix) - 1;
   return (CHAR8*)FixedPcdGetPtr (PcdAdvancedLoggerStringMmCoreArmPrefix);
 }
