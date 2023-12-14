@@ -47,5 +47,8 @@
   gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerPages                        ## CONSUMES
   gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerHdwPortDebugPrintErrorLevel  ## CONSUMES
 
+[FixedPcd]
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringSecPrefix              ## CONSUMES
+
 [BuildOptions]
   *_*_*_CC_FLAGS  = -D ADVANCED_LOGGER_SEC=1

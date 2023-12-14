@@ -50,6 +50,7 @@ AdvancedLoggerMemoryLoggerWrite (
   UINTN                          EntrySize;
   UINTN                          UsedSize;
   ADVANCED_LOGGER_MESSAGE_ENTRY  *Entry;
+  CONST CHAR8                    *MessagePrefix;
 
   if ((NumberOfBytes == 0) || (Buffer == NULL)) {
     return NULL;
@@ -62,6 +63,7 @@ AdvancedLoggerMemoryLoggerWrite (
   LoggerInfo = AdvancedLoggerGetLoggerInfo ();
 
   if (LoggerInfo != NULL) {
+    MessagePrefix = AdvancedLoggerGetStringPrefix ();
     EntrySize = MESSAGE_ENTRY_SIZE (NumberOfBytes);
     do {
       CurrentBuffer = LoggerInfo->LogCurrent;

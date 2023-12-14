@@ -110,6 +110,18 @@
   #
   gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerHdwPortDebugPrintErrorLevel|0xFFFFFFFF|UINT32|0x00010180
 
+  ## Advanced Logger Prefix for each applicable instances. Platform can populate the
+  #  PCD with strings to be used as prefix for messages printed by corresponding modules.
+  #
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringSecPrefix|""|VOID*|0x000101A0
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringPeiCorePrefix|""|VOID*|0x000101A1
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringPei64Prefix|""|VOID*|0x000101A2
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringDxeCorePrefix|""|VOID*|0x000101A3
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringSmmCorePrefix|""|VOID*|0x000101A4
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringMmCorePrefix|""|VOID*|0x000101A5
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringMmCoreArmPrefix|""|VOID*|0x000101A6
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringBaseArmPrefix|""|VOID*|0x000101A7
+  gAdvLoggerPkgTokenSpaceGuid.PcdAdvancedLoggerStringRuntimePrefix|""|VOID*|0x000101A8
 
 [UserExtensions.TianoCore."ExtraFiles"]
   AdvLoggerPkgExtra.uni

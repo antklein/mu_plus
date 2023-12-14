@@ -112,6 +112,21 @@ AdvancedLoggerGetLoggerInfo (
   return mLoggerInfo;
 }
 
+/*
+  Helper function to populate prefixes for each advanced logger message to distinguish
+  between different modules types.
+
+  @return   Pointer to the prefix string. A NULL pointer indicates that no prefix is needed.
+*/
+CONST CHAR8*
+EFIAPI
+AdvancedLoggerGetStringPrefix (
+  VOID
+  )
+{
+  return (CHAR8*)FixedPcdGetPtr (PcdAdvancedLoggerStringRuntimePrefix);
+}
+
 /**
     Inform all instances of Advanced Logger that ExitBoot Services has occurred.
 

@@ -44,4 +44,16 @@ AdvancedLoggerGetLoggerInfo (
   VOID
   );
 
+/*
+  Helper function to populate prefixes for each advanced logger message to distinguish
+  between different modules types.
+
+  @return   Pointer to the prefix string. A NULL pointer indicates that no prefix is needed.
+*/
+CONST CHAR8*
+EFIAPI
+AdvancedLoggerGetStringPrefix (
+  VOID
+  );
+
 #endif // __ADVANCED_LOGGER_COMMON_H__

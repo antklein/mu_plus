@@ -13,6 +13,7 @@
 #include <Library/AdvancedLoggerLib.h>
 #include <Library/DebugLib.h>
 #include <Library/SynchronizationLib.h>
+#include <Library/PcdLib.h>
 
 #include "../AdvancedLoggerCommon.h"
 
@@ -115,4 +116,19 @@ AdvancedLoggerGetLoggerInfo (
   }
 
   return mLoggerInfo;
+}
+
+/*
+  Helper function to populate prefixes for each advanced logger message to distinguish
+  between different modules types.
+
+  @return   Pointer to the prefix string. A NULL pointer indicates that no prefix is needed.
+*/
+CONST CHAR8*
+EFIAPI
+AdvancedLoggerGetStringPrefix (
+  VOID
+  )
+{
+  return (CHAR8*)FixedPcdGetPtr (PcdAdvancedLoggerStringBaseArmPrefix);
 }
